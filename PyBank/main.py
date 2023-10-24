@@ -11,6 +11,11 @@ budget_data = Path("Resources/budget_data.csv")
 monthCount = 0
 #counter for the grand total
 profLossCount = 0
+#holder for greatest increase in profits
+greatestIncrease = 0
+#holder for greatest decrease in profits
+greatestDecrease = 0
+
 with open(budget_data) as csvfile:
     budget_reader = csv.reader(csvfile, delimiter=',')
     #this next line skips the first line in the csv file since it is not relevant
@@ -26,9 +31,10 @@ with open(budget_data) as csvfile:
 #this section prints off the final financial analysis
 print("Financial Analysis\n")
 print("------------------------------\n")
-
 print("Total Months: " , monthCount,"\n")
 print("Total: ", profLossCount,"\n")
+print("Greatest Increase in Profits:","\n")
+print("Greatest Decrease in Profits:","\n")
 
 
 
