@@ -20,6 +20,7 @@ with open(budget_data) as csvfile:
     budget_reader = csv.reader(csvfile, delimiter=',')
     #this next line skips the first line in the csv file since it is not relevant
     header=next(budget_reader) 
+    #reads through the rows in the document
     for row in budget_reader:
         date = row[0]
         profitLoss = int(row[1])
