@@ -34,8 +34,21 @@ print("Financial Analysis\n")
 print("------------------------------\n")
 print("Total Months: " , monthCount,"\n")
 print("Total: ", profLossCount,"\n")
+print("Average Change:","\n")
 print("Greatest Increase in Profits:","\n")
 print("Greatest Decrease in Profits:","\n")
 
 
-
+#write it to a new text file. If you want to rewrite the document, you have to append by
+#swapping the "x" for an "a" otherwise this will throw an error after initial run
+f = open("PyBank_Results.txt","x")
+f.write("Financial Analysis\n")
+f.write("------------------------------\n")
+f.write(f"Total Months: {monthCount}")
+f.write("\n")
+f.write(f"Total: {profLossCount}")
+f.write("\n")
+f.write("Average Change: \n")
+f.write("Greatest Increase in Profits: \n")
+f.write("Greatest Decrease in Profits: \n")
+f.close()

@@ -53,3 +53,17 @@ print("-------------------------\n")
 #the winner
 print(f"Winner: {winner}","\n")
 print("-------------------------\n") 
+
+#write it to a new text file. If you want to rewrite the document, you have to append by
+#swapping the "x" for an "a" otherwise this will throw an error after initial run
+
+f = open("PyPoll_Results.txt","x")
+f.write("Election Results\n")
+f.write("-------------------------\n")
+f.write(f"Total Votes: {totalVotes} \n")
+f.write("-------------------------\n")
+f.write("-------------------------\n")
+#the winner
+f.write(f"Winner: {winner} \n")
+f.write("-------------------------\n") 
+f.close()
