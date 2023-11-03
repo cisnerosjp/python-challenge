@@ -38,7 +38,8 @@ print(totalVotes)
 print(candidateInfo)
 
 #candidate with most votes
-#winner = max()
+
+winner = max(candidateInfo, key=candidateInfo.get)
 
 #this section prints off the election results
 print("Election Results\n")
@@ -50,5 +51,5 @@ print("-------------------------\n")
 # the winner of the election based on popular vote
 print("-------------------------\n")
 #the winner
-print("Winner:","\n")
+print(f"Winner: {winner}","\n")
 print("-------------------------\n") 
