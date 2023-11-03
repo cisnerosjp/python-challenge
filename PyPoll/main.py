@@ -2,6 +2,7 @@
 #import data and dependencies
 from pathlib import Path
 import csv
+import operator
 
 #importing election data
 election_data = Path("Resources/election_data.csv")
@@ -10,6 +11,7 @@ election_data = Path("Resources/election_data.csv")
 totalVotes = 0
 #information for the candidates
 candidateInfo = {}
+#candidates votes and percentage
 
 #opening the election data
 with open(election_data, encoding="UTF-8") as csvfile:
@@ -20,9 +22,23 @@ with open(election_data, encoding="UTF-8") as csvfile:
     for row in elections:
         #add to the counter for votes
         totalVotes += 1
-        
-print(totalVotes)
+        #get candidate informations and add to their counter and add the candidate
+        candidate = row[2]
+        if candidate in candidateInfo.keys():
+            candidateInfo[candidate] += 1
+        else:
+            candidateInfo[candidate] = 1
 
+
+
+
+
+
+print(totalVotes)
+print(candidateInfo)
+
+#candidate with most votes
+#winner = max()
 
 #this section prints off the election results
 print("Election Results\n")
@@ -35,4 +51,4 @@ print("-------------------------\n")
 print("-------------------------\n")
 #the winner
 print("Winner:","\n")
-print("-------------------------\n")
+print("-------------------------\n") 
